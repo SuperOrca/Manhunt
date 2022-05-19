@@ -24,7 +24,8 @@ public class Profile {
     }
 
     public static Profile add(final Player player) {
-        return profiles.put(player, new Profile(player));
+        if (!profiles.containsKey(player)) profiles.put(player, new Profile(player));
+        return get(player);
     }
 
     public static void remove(final Player player) {

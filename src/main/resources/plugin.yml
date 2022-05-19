@@ -1,5 +1,5 @@
-name: ManhuntCommand
+name: Manhunt
 version: '${project.version}'
-main: me.superorca.manhunt.ManhuntCommand
+main: me.superorca.manhunt.Manhunt
 api-version: 1.18
 authors: [ SuperOrca ]

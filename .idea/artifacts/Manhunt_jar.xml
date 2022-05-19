@@ -1,8 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Manhunt:jar">
-    <output-path>$PROJECT_DIR$/../../..</output-path>
+    <output-path>$PROJECT_DIR$/../../../server/plugins</output-path>
     <root id="archive" name="Manhunt.jar">
       <element id="module-output" name="Manhunt" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Revxrsal/Lamp/brigadier/3.0.4/brigadier-3.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Revxrsal/Lamp/bukkit/3.0.4/bukkit-3.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Revxrsal/Lamp/common/3.0.4/common-3.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/me/lucko/commodore/1.13/commodore-1.13.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
