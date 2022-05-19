@@ -9,7 +9,7 @@
 <p align="center">
   <img alt="" src="https://img.shields.io/tokei/lines/github/SuperOrca/manhunt?style=for-the-badge">  
   <img alt="" src="https://img.shields.io/github/stars/SuperOrca/manhunt?style=for-the-badge">
-  <img alt="" src="https://img.shields.io/github/v/release/superorca/manhunt?color=000000&include_prereleases&label=version&style=for-the-badge">
+  <img alt="" src="https://img.shields.io/github/v/release/superorca/manhunt?color=000000&label=version&style=for-the-badge">
 </p>
 
 ## Installation
