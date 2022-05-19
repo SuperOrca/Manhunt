@@ -14,10 +14,10 @@
 
 ## Installation
 1. Download the latest jar from [releases](https://github.com/SuperOrca/Manhunt/releases)
-2. Drop the jar file into your plugins folder.
+2. Drop the jar file into your plugins folder
 
 ## Contributing
-If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome
 
 ## Help / Bug / Feature Request
 If you have found a bug please [open an issue](https://github.com/SuperOrca/Manhunt/issues/new) with as much detail as possible, including relevant logs and screenshots where applicable
