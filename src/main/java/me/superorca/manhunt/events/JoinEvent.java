@@ -11,6 +11,10 @@ public class JoinEvent implements Listener {
     public void onPlayerJoin(final PlayerJoinEvent e) {
         final Player player = e.getPlayer();
 
-        Profile.add(player).update();
+        Profile.add(player);
+
+        Profile profile = Profile.get(player);
+
+        profile.update();
     }
 }
