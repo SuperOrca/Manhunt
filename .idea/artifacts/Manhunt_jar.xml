@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Manhunt:jar">
-    <output-path>$PROJECT_DIR$/../../../server/plugins</output-path>
+    <output-path>$PROJECT_DIR$/../../../b/plugins</output-path>
     <root id="archive" name="Manhunt.jar">
       <element id="module-output" name="Manhunt" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Revxrsal/Lamp/brigadier/3.0.4/brigadier-3.0.4.jar" path-in-jar="/" />

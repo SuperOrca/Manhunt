@@ -35,32 +35,40 @@ public class InteractEvent implements Listener {
         final CompassMeta meta = (CompassMeta) item.getItemMeta();
         if (meta == null) return;
 
-        if (action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
-            profile.setTracking(ManhuntCommand.getSpeedrunners().get(new Random().nextInt(ManhuntCommand.getSpeedrunners().size())));
-            player.sendMessage(F("&fNow Tracking: &a%s", profile.getTracking().getPlayer().getName()));
-            player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
+        boolean update = updateCompass(profile, world, player, meta);
+
+        if (update) {
+            if (action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
+                profile.setTracking(ManhuntCommand.getSpeedrunners().get(new Random().nextInt(ManhuntCommand.getSpeedrunners().size())));
+                sendActionBar(player, F("&fChanged tracker to track &a%s&f.", profile.getTracking().getPlayer().getName()));
+                player.playSound(player.getLocation(), Sound.BLOCK_LEVER_CLICK, 1, 1);
+            } else {
+                sendActionBar(player, F("&fUpdated location of &a%s&f.", profile.getTracking().getPlayer().getName()));
+            }
         } else {
-            sendActionBar(player, F("&fTracking: &a%s", profile.getTracking().getPlayer().getName()));
+            sendActionBar(player, F("&cUnable to track. Make sure you have selected a player to track by left clicking the compass."));
         }
 
-        updateCompass(profile, world, player, meta);
         item.setItemMeta(meta);
     }
 
-    public void updateCompass(Profile profile, World world, Player player, CompassMeta meta) {
+    public boolean updateCompass(Profile profile, World world, Player player, CompassMeta meta) {
         Profile tracking = profile.getTracking();
 
-        if (tracking == null) {
-            player.sendMessage(F("&cYou are not tracking anyone currently."));
-            return;
-        }
+        if (tracking == null) return false;
 
         final Location location = profile.getTracking().getLastLocation(world);
+        if (location == null) return false;
         player.setCompassTarget(location);
 
-        if (world.getEnvironment() == World.Environment.NORMAL) return;
+        if (world.getEnvironment() == World.Environment.NORMAL) {
+            meta.setLodestone(null);
+        } else {
+            meta.setLodestone(location);
+        }
 
-        meta.setLodestone(location);
         meta.setLodestoneTracked(false);
+
+        return true;
     }
 }
